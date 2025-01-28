@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <!--a.5 直接從內部加一下CSS and Javascript(alert...)-->
+	<!-- CSS: 檔案在static\css\style.css -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}"> <!-- url_for: to create dynamic URL, 'static': go to the css folder-->
+	
+	<!-- Javascript: 檔案在static\scrpit\script.js -->
+	<script type="text/javascript" src="{{ url_for('static',filename='script/script.js') }}">
+	</script>
+
+  <body>
+    <!-- <h1>Live streaming</h1> -->
+    <div>
+		<img src="{{ url_for('video') }}" width="50%"/>
+    </div>
+
+    <!-- <h2>Control Pannel</h2> -->
+    <div>   
+        <form id="movementForm" action="/control_panel" method="POST" onsubmit="return false;"> 
+            Control Panel : 
+            <button type="button" id="moveLButton" onmousedown="holdButton('Left')" onmouseup="releaseButton('Stop')">Left</button>
+            <button type="button" id="moveRButton" onmousedown="holdButton('Right')" onmouseup="releaseButton('Stop')">Right</button>
+            <button type="button" id="moveFButton" onmousedown="holdButton('Front')" onmouseup="releaseButton('Stop')">Front</button>
+            <button type="button" id="moveBButton" onmousedown="holdButton('Back')" onmouseup="releaseButton('Stop')">Back</button>    
+        </form>
+        
+    </div>
+   
+    </body>
+
+
+</html>

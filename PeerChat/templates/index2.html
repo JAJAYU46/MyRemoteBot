@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>MyChatRoom</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}"> <!-- url_for: to create dynamic URL, 'static': go to the css folder-->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}"> <!-- url_for: to create dynamic URL, 'static': go to the css folder-->
+
+    <!-- Javascript: 檔案在static\scrpit\script.js -->
+    <!-- 注意順序很重要, 要先把library跑完!! -->
+    <script type="text/javascript" src="{{ url_for('static',filename='script/agora-rtm-sdk-1.4.4.js') }}">
+    </script>
+    <script type="text/javascript" src="{{ url_for('static',filename='script/script.js') }}">
+    </script>
+    <script type="text/javascript" src="{{ url_for('static',filename='script/main.js') }}">
+    </script>
+
+</head>
+<body>
+    
+    <div id="videos">
+        <!-- Create video tag -->
+        <video class="video-player" id="user-1" autoplay playsinline></video>
+        <video class="video-player" id="user-2" autoplay playsinline></video>
+    </div>
+    <!-- <h1>Live streaming</h1> -->
+    <div>
+		<img src="{{ url_for('video') }}" width="50%"/>
+    </div>
+
+    <!-- <h2>Control Pannel</h2> -->
+    <div>   
+        <form id="movementForm" action="/control_panel" method="POST" onsubmit="return false;"> 
+            Control Panel : 
+            <button type="button" id="moveLButton" onmousedown="holdButton('Left')" onmouseup="releaseButton('Stop')">Left</button>
+            <button type="button" id="moveRButton" onmousedown="holdButton('Right')" onmouseup="releaseButton('Stop')">Right</button>
+            <button type="button" id="moveFButton" onmousedown="holdButton('Front')" onmouseup="releaseButton('Stop')">Front</button>
+            <button type="button" id="moveBButton" onmousedown="holdButton('Back')" onmouseup="releaseButton('Stop')">Back</button>    
+        </form>
+        
+    </div>
+
+
+
+</body>
+<!-- <script src="agora-rtm-sdk-1.4.4.js"></script> -->
+<!-- agora-rtm-sdk-1.4.4.js/ agora-rtm-2.2.1.min.js -->
+<!-- <script src="../main.js"></script> -->
+<!-- <script src="../script/script.js"></script> -->
+<!-- CSS: 檔案在static\css\style.css -->
+
+
+</html>
