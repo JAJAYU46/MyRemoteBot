@@ -1,0 +1,259 @@
+/* Global Setting */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Overall Page Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e0f7fa;  /* Light aqua background */
+    color: #00ebfc;  /* Dark teal text color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #e0f7fa, #1ac6ff);  /* Ocean gradient background */
+}
+
+/* Header Styling */
+h1 {
+    font-size: 2.5rem;
+    color: #104e87;  /* Sea green color */
+    margin-top: 20px;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);  /* Subtle text shadow for depth */
+}
+
+h2 {
+    font-size: 2rem;
+    color: #00695c;  /* Slightly darker shade of teal */
+    margin-top: 30px;
+}
+
+/* Subtle Wave Effect on Background */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/ocean-wave.png');  /* Oceanic texture */
+    opacity: 0.1;  /* Very subtle texture */
+    pointer-events: none;
+}
+
+/* Footer Styling */
+footer {
+    position: absolute;
+    bottom: 20px;
+    font-size: 1rem;
+    color: #004d40;
+    text-align: center;
+}
+
+
+/* Ocean theme above */
+/* ====================== for video ===================== */
+/* Set Global Setting */
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box; /*確保padding 不會extend outside the parent*/
+
+}
+
+/* <div id="videos">: style our video container (那個video的框框) */
+.video_frame_parent{
+    position: relative;
+    height: 50vh;
+    /* overflow: hidden; */
+}
+#videos{
+    display: grid;
+    grid-template-columns: 1fr;
+    /* 要把<div id="videos">裡的各東東分成1:2的格子, 然後裡面的東東就順著填進去
+    grid-template-columns: 1fr 1fr 1fr: 就是把那row切成3個column格子, 順著填下去就是填了兩格 */
+    /* 會讓這個佔各50趴 */
+    /* gap:2em; */
+    /* height: 100vh; */
+    height: 100%;
+    overflow: hidden;
+    
+}
+
+/* <video class="video-player": 先讓它有黑色背景 */
+.video-player{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover; /*<Note> 不太懂幹嘛的*/
+    /* position: relative; Make .smallFrame position relative to this */
+}
+
+/* 當作參考點用 */
+/* .video-player_parent{ 
+    position: relative;
+} */
+
+/* [Step9] (optional) 當peer2退出時, 會隱藏peer2框框 */
+#user-2{
+    
+    display: none;
+}
+
+/* 建立那個自己的小視窗 */
+.smallFrame{
+    position: absolute; /* Make .smallFrame position relative to this */
+    /* top: 20px;
+    left: 20px; */
+    /* height: 170px;
+    width: 300px; */
+    top: 20px;
+    left: 20px;
+    width: 20%;
+    height: auto;
+    /* aspect-ratio: 1 / 2;  Width:Height = 2:1, so height = width / 2 */
+    border-radius: 5px;
+    border: 2px solid #66f9ed;
+    -webkit-box-shadow: 3px 3px 15px -1px rgba(0,0,0,0.77);
+    box-shadow: 3px 3px 15px -1px rgba(0,0,0,0.77);
+    z-index: 999; /*定它的圖層等級, 越大越上層*/
+
+}
+
+/* For remote client page */
+/* put whole container在bottom of the page & is at center */
+#controls{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex; /*inline all the item?*/
+    gap: 1em; /*space between each item*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    
+}
+
+.control-container{
+    /* .9: 透明度 */
+    background-color: rgb(179, 102, 249, .9); 
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 40px;  /* Smaller size for the circle */
+    height: 40px; /* Equal to width for a perfect circle */
+}
+
+.control-container img{
+    height: 20px;
+    width: 20px;
+    /* width: 10%;
+    height: auto; */
+    border: none;  /* Removes any border from the image */
+    box-shadow: none;
+}
+
+#leave-btn{
+    background-color: rgb(255, 80, 80, 1);
+
+}
+
+/* =================== for control pannel ================= */ 
+/* Button Styling */
+button {
+    background-color: #ffe679; /* Green */
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    width: 120px;
+    height: 60px;
+}
+
+button:hover {
+    background-color: #4580a0; /* Darker Green */
+}
+
+button:active {
+    background-color: #204d5e; /* Even darker green */
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Customizing Grid Position for Directional Buttons */
+/* Control Panel Styling */
+#movementForm {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(4, 15, 130, 0.5);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 30px;
+    width: 400px;  /* Adjust width to fit buttons */
+    margin-top: 20px;
+    grid-template-areas:
+        ". front ."
+        "left . right"
+        ". back .";
+    gap: 10px;
+    justify-content: center;
+    
+}
+
+#moveLButton { grid-area: left; }
+#moveRButton { grid-area: right; }
+#moveFButton { grid-area: front; }
+#moveBButton { grid-area: back; }
+
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #0277bd;
+    font-size: 2.5em;
+    margin-top: 20px;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+img {
+    border: 5px solid #0288d1;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+} */
+

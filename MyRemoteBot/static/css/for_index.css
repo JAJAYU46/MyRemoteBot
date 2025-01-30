@@ -1,0 +1,145 @@
+/* Global Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+/* Make sure the entire page takes up full screen */
+/* html, body {
+    height: 100%;
+    width: 100%;
+} */
+
+/* Overall Page Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #6dd5ed, #2193b0); /* A smooth gradient background */
+    color: #fff; /* White text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    overflow: hidden; /* Prevents scrolling */
+}
+
+/* Header Styling */
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    
+}
+
+/* Subheader Styling */
+h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #ffd700; /* Gold color */
+}
+
+/* Styling for the form and buttons */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    background-color: #008cba;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #005f75; /* Darker blue on hover */
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Footer Styling */
+footer {
+    position: absolute;
+    bottom: 20px;
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+
+/* Styling the entire form container */
+#directoryForm {
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    align-self: center;
+}
+
+/* Add some spacing and structure for the buttons */
+#goToRemoteButton, #goToCloseButton {
+    width: 200px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+}
+
+/* Optional: Styling for the form inputs (if you have any) */
+input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 250px;
+}
+
+/* ============ For Flask Message =========== */
+.flashes {
+    list-style-type: none;
+    position: fixed;
+    top: 1%;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #ffbb00;
+    border: 1px solid #ffbb00;
+    border-radius: 5px;
+}
+/* ====================================== */
+
+/* Mobile responsive adjustments */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        width: 150px;
+        font-size: 1rem;
+    }
+    
+    #directoryForm {
+        width: 100%;
+        margin-top: 15px;
+        align-self: center;
+    }
+}

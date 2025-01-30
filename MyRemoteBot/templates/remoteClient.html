@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>MyChatRoom</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}"> url_for: to create dynamic URL, 'static': go to the css folder -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}"> url_for: to create dynamic URL, 'static': go to the css folder -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/for_video.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/for_control_pannel.css') }}"> 
+    
+
+
+
+
+    <!-- Javascript: 檔案在static\scrpit\script.js -->
+    <!-- 注意順序很重要, 要先把library跑完!! -->
+    <script type="text/javascript" src="{{ url_for('static',filename='script/agora-rtm-sdk-1.4.4.js') }}">
+    </script>
+    <script type="text/javascript" src="{{ url_for('static',filename='script/for_remote_pannel.js') }}">
+    </script>
+    <script type="text/javascript" src="{{ url_for('static',filename='script/for_remote_video.js') }}">
+    </script>
+    <!-- <script type="text/javascript" src="{{ url_for('static',filename='script/main.js') }}">
+    </script> -->
+
+</head>
+<body>
+    <h1>Welcome to remoteClient! </h1>
+    <!-- 只是為了擺放 -->
+    <div  class="video_frame_parent"> 
+        <!-- video stream -->
+        <div id="videos">
+            <!-- Create video tag -->
+            <video class="video-player" id="user-1" autoplay playsinline></video>
+            <video class="video-player" id="user-2" autoplay playsinline></video>
+        </div>
+        <!-- Button for video stream -->
+        <!-- <div>   
+            <form id="videoButtonForm" action="/video_button" method="POST" onsubmit="return false;"> 
+                <button type="button" id="micButton" class="videoButton_class" onclick="handleButtonClick('mic')">mic</button>    
+                <button type="button" id="camButton" class="videoButton_class" onclick="handleButtonClick('cam')">cam</button>    
+            </form> 
+        </div> -->
+    
+        <div id="controls">
+            <div class="control-container" id="camera-btn">
+                <img src="{{ url_for('static', filename='icons/camera.png') }}"/>
+            </div>
+    
+            <div class="control-container" id="mic-btn">
+                <img src="{{ url_for('static', filename='icons/mic.png') }}"/>
+            </div>
+    
+            <!-- image當button用? -->
+            <!-- 如果按退出image了, 就跑回lobby home去 -->
+            <!-- Change <a> to Call Logout First and then go to '/' page -->
+            <a href="javascript:void(0);" onclick="logoutAndRedirect()">
+                <div class="control-container" id="leave-btn">
+                    <img src="{{ url_for('static', filename='icons/phone.png') }}"/>
+                </div>
+            </a> 
+        </div>
+    </div>
+
+
+
+    <!-- Control Pannel -->
+    <div>   
+        <form id="movementForm" action="/control_panel" method="POST" onsubmit="return false;"> 
+            Control Panel : 
+            <button type="button" id="moveLButton" onmousedown="holdButton_remote('Left')" onmouseup="releaseButton_remote('Stop')">Left</button>
+            <button type="button" id="moveRButton" onmousedown="holdButton_remote('Right')" onmouseup="releaseButton_remote('Stop')">Right</button>
+            <button type="button" id="moveFButton" onmousedown="holdButton_remote('Front')" onmouseup="releaseButton_remote('Stop')">Front</button>
+            <button type="button" id="moveBButton" onmousedown="holdButton_remote('Back')" onmouseup="releaseButton_remote('Stop')">Back</button>    
+        </form>
+        
+    </div>
+    
+    
+
+</body>
+
+</html>

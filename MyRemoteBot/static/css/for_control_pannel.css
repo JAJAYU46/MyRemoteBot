@@ -1,0 +1,55 @@
+/* =================== Control Pannel ================== */
+/* Buttons */
+button {
+    background-color: #252525;
+    color: #00aaff;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    width: 120px;
+    height: 60px;
+}
+
+button:hover {
+    background-color: #333333;
+}
+
+button:active {
+    background-color: #444444;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Movement Control Panel */
+#movementForm {
+    background-color: #303030;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 255, 255, 0.3);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 30px;
+    width: 400px;
+    margin-top: 20px;
+    grid-template-areas:
+        ". front ."
+        "left . right"
+        ". back .";
+    gap: 10px;
+    justify-content: center;
+}
+
+#moveLButton { grid-area: left; }
+#moveRButton { grid-area: right; }
+#moveFButton { grid-area: front; }
+#moveBButton { grid-area: back; }

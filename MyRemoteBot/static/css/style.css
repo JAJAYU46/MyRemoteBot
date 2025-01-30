@@ -1,0 +1,118 @@
+/* Overall Page Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header Styling */
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-top: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #444;
+    margin-top: 30px;
+}
+
+/* Image Styling */
+img {
+    display: block;  /* Makes the image a block-level element */
+    margin: 20px auto; /* Centers the image horizontally with a top and bottom margin */
+    border: 5px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Button Styling */
+button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    width: 120px;
+    height: 60px;
+}
+
+button:hover {
+    background-color: #45a049; /* Darker Green */
+}
+
+button:active {
+    background-color: #388e3c; /* Even darker green */
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Customizing Grid Position for Directional Buttons */
+/* Control Panel Styling */
+#movementForm {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 30px;
+    width: 400px;  /* Adjust width to fit buttons */
+    margin-top: 20px;
+    grid-template-areas:
+        ". front ."
+        "left . right"
+        ". back .";
+    gap: 10px;
+    justify-content: center;
+    
+}
+
+#moveLButton { grid-area: left; }
+#moveRButton { grid-area: right; }
+#moveFButton { grid-area: front; }
+#moveBButton { grid-area: back; }
+
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #0277bd;
+    font-size: 2.5em;
+    margin-top: 20px;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+img {
+    border: 5px solid #0288d1;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+} */

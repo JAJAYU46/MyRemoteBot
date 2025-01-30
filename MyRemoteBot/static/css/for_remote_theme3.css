@@ -1,0 +1,192 @@
+/* Global Setting */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Overall Page Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a;  /* Dark space background */
+    color: #f0f8ff;  /* Light starry text color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #1a1a1a, #1e2d3b);  /* Space gradient */
+}
+
+/* Header Styling */
+h1 {
+    font-size: 2.5rem;
+    color: #ffffff;  /* Bright white for stars */
+    margin-top: 20px;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.2);  /* Soft star-like glow */
+}
+
+h2 {
+    font-size: 2rem;
+    color: #c0c0c0;  /* Silver gray for subtle text */
+    margin-top: 30px;
+}
+
+/* Subtle Stars Effect on Background */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/stars.png');  /* Starry texture */
+    opacity: 0.2;  /* Subtle starry texture */
+    pointer-events: none;
+}
+
+/* Footer Styling */
+footer {
+    position: absolute;
+    bottom: 20px;
+    font-size: 1rem;
+    color: #f0f8ff;  /* Light starry color for footer */
+    text-align: center;
+}
+
+/* Ocean theme above */
+/* ====================== for video ===================== */
+/* Set Global Setting */
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+/* Video container styling */
+.video_frame_parent{
+    position: relative;
+    height: 50vh;
+}
+#videos{
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Video player background */
+.video-player{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Keeps the aspect ratio */
+}
+
+/* Peer2 exit behavior */
+#user-2{
+    display: none;
+}
+
+/* Small frame for video */
+.smallFrame{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 20%;
+    height: auto;
+    border-radius: 5px;
+    border: 2px solid #1e90ff;  /* Bright blue for the border */
+    box-shadow: 3px 3px 15px -1px rgba(0, 0, 0, 0.77);
+    z-index: 999;
+}
+
+/* For remote client page */
+#controls{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1em;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+}
+
+.control-container{
+    background-color: rgba(33, 33, 33, 0.8); /* Dark background for controls */
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+
+.control-container img{
+    height: 20px;
+    width: 20px;
+    border: none;
+    box-shadow: none;
+}
+
+/* Leave button */
+#leave-btn{
+    background-color: rgb(255, 0, 0, 1);  /* Red for danger */
+}
+
+/* =================== for control panel ================= */
+button {
+    background-color: #333333; /* Dark button background */
+    color: #ffffff;  /* Light color text */
+    border: none;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    width: 120px;
+    height: 60px;
+}
+
+button:hover {
+    background-color: #444444; /* Slightly lighter on hover */
+}
+
+button:active {
+    background-color: #555555; /* Even lighter on active */
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Customizing Grid Position for Directional Buttons */
+#movementForm {
+    background-color: #2f2f2f;  /* Dark background for the form */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);  /* Slight glow */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 30px;
+    width: 400px;
+    grid-template-areas:
+        ". front ."
+        "left . right"
+        ". back .";
+}
+
+#moveLButton { grid-area: left; }
+#moveRButton { grid-area: right; }
+#moveFButton { grid-area: front; }
+#moveBButton { grid-area: back; }
